@@ -85,6 +85,16 @@
       color: var(--cyan);
     }
 
+    .logo-img {
+      height: 54px;
+      width: auto;
+      max-width: 190px;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 0 16px rgba(34,211,238,.25));
+    }
+
+
     .nav-links {
       display: flex;
       gap: 22px;
@@ -358,21 +368,38 @@
 
     .speaker {
       display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 22px;
+      grid-template-columns: 230px 1fr;
+      gap: 26px;
       align-items: center;
+      padding: 22px;
     }
 
     .speaker-photo {
-      height: 160px;
+      height: 280px;
       border-radius: 24px;
       background:
+        radial-gradient(circle at 50% 20%, rgba(34,211,238,.22), transparent 36%),
         linear-gradient(135deg, rgba(37,99,235,.28), rgba(34,211,238,.1)),
         rgba(255,255,255,.06);
-      border: 1px solid var(--line);
+      border: 1px solid rgba(34,211,238,.22);
       display: grid;
       place-items: center;
-      font-size: 54px;
+      overflow: hidden;
+      box-shadow: inset 0 0 40px rgba(14,165,233,.12), 0 16px 45px rgba(0,0,0,.28);
+    }
+
+    .speaker-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 22px;
+      transition: .45s ease;
+      filter: saturate(1.05) contrast(1.04);
+    }
+
+    .speaker:hover .speaker-img {
+      transform: scale(1.045);
     }
 
     .tag {
@@ -525,6 +552,16 @@
 
       .speaker {
         grid-template-columns: 1fr;
+        padding: 20px;
+      }
+
+      .speaker-photo {
+        height: 330px;
+      }
+
+      .logo-img {
+        height: 42px;
+        max-width: 150px;
       }
 
       .hero {
@@ -581,7 +618,9 @@
 
     <nav class="nav">
       <div class="container nav-inner">
-        <div class="logo">MATA<span> AI</span></div>
+        <div class="logo">
+          <img src="Logo%20Mata.png" alt="MATA" class="logo-img">
+        </div>
 
         <div class="nav-links">
           <a href="#workforce">AI Workforce</a>
@@ -590,7 +629,7 @@
           <a href="#pricing">Pricing</a>
         </div>
 
-        <a class="nav-cta" href="https://wa.me/60123456789" target="_blank">
+        <a class="nav-cta" href="https://wa.me/601161631896?text=Saya%20berminat%20nak%20join%20AI%20Trading%20Automation%20Workshop%202026" target="_blank">
           Reserve Seat →
         </a>
       </div>
@@ -611,7 +650,7 @@
         </p>
 
         <div class="hero-actions">
-          <a class="btn-primary" href="https://wa.me/60123456789" target="_blank">Reserve My Seat →</a>
+          <a class="btn-primary" href="https://wa.me/601161631896?text=Saya%20berminat%20nak%20join%20AI%20Trading%20Automation%20Workshop%202026" target="_blank">Reserve My Seat →</a>
           <a class="btn-secondary" href="#modules">Lihat Apa Yang Anda Belajar</a>
         </div>
 
@@ -835,7 +874,9 @@
 
         <div class="grid-2">
           <div class="card speaker">
-            <div class="speaker-photo">👨‍💼</div>
+            <div class="speaker-photo">
+              <img src="Dr%20Yussra%204.png" alt="Dr. Yussra Yusoff" class="speaker-img">
+            </div>
             <div>
               <h3>Dr. Yussra Yusoff</h3>
               <p class="tag">Deputy Chairman MATA</p>
@@ -844,7 +885,9 @@
           </div>
 
           <div class="card speaker">
-            <div class="speaker-photo">👨‍💼</div>
+            <div class="speaker-photo">
+              <img src="Mizan.png" alt="En. Awadz Hasmizan" class="speaker-img">
+            </div>
             <div>
               <h3>En. Awadz Hasmizan</h3>
               <p class="tag">Quantitative Strategist</p>
@@ -911,7 +954,7 @@
             <div class="count-item"><strong id="seconds">00</strong><small>Seconds</small></div>
           </div>
 
-          <a class="btn-primary" href="https://wa.me/60123456789" target="_blank">Reserve My Seat Now →</a>
+          <a class="btn-primary" href="https://wa.me/601161631896?text=Saya%20berminat%20nak%20join%20AI%20Trading%20Automation%20Workshop%202026" target="_blank">Reserve My Seat Now →</a>
           <p style="margin-top:16px;color:#a8b3c7;">Secure your spot now. Seat sangat limited.</p>
         </div>
       </div>
@@ -957,7 +1000,7 @@
       <div class="container">
         <h2>AI tidak akan menggantikan trader yang tahu berfikir. Tapi trader yang tahu guna AI akan bergerak jauh lebih pantas.</h2>
         <p>Join AI Trading Automation Workshop 2026 dan bina AI Trading Workforce anda sendiri.</p>
-        <a class="btn-primary" href="https://wa.me/601161631896" target="_blank">Reserve My Seat →</a>
+        <a class="btn-primary" href="https://wa.me/601161631896?text=Saya%20berminat%20nak%20join%20AI%20Trading%20Automation%20Workshop%202026" target="_blank">Reserve My Seat →</a>
       </div>
     </section>
 
@@ -967,11 +1010,11 @@
       </div>
     </footer>
 
-    <a class="whatsapp" href="https://wa.me/601161631896" target="_blank">WhatsApp</a>
+    <a class="whatsapp" href="https://wa.me/601161631896?text=Saya%20berminat%20nak%20join%20AI%20Trading%20Automation%20Workshop%202026" target="_blank">WhatsApp</a>
 
     <div class="sticky-bottom">
-      <a class="wa" href="https://wa.me/601161631896" target="_blank">WhatsApp</a>
-      <a class="seat" href="https://wa.me/601161631896" target="_blank">Reserve Seat</a>
+      <a class="wa" href="https://wa.me/601161631896?text=Saya%20berminat%20nak%20join%20AI%20Trading%20Automation%20Workshop%202026" target="_blank">WhatsApp</a>
+      <a class="seat" href="https://wa.me/601161631896?text=Saya%20berminat%20nak%20join%20AI%20Trading%20Automation%20Workshop%202026" target="_blank">Reserve Seat</a>
     </div>
 
   </div>
