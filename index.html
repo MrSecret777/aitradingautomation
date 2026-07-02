@@ -3,10 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Trading Automation System | MATA</title>
-  <meta name="description" content="Seminar AI Trading Automation System untuk trader US Market. Belajar bina AI Trading Workforce untuk research, screening, news analysis, strategy dan backtesting." />
+
+  <title>AI Trading Automation Workshop 2026 | MATA</title>
+  <meta name="description" content="Build Your Own AI Trading Workforce. Seminar fizikal 25–26 July 2026 di Common Ground Ampang. Limited to 20 participants." />
 
   <style>
+    :root {
+      --bg: #030712;
+      --bg2: #07111f;
+      --card: rgba(255,255,255,.07);
+      --line: rgba(255,255,255,.13);
+      --text: #ffffff;
+      --muted: #a8b3c7;
+      --blue: #0ea5e9;
+      --blue2: #2563eb;
+      --cyan: #22d3ee;
+      --gold: #facc15;
+      --green: #22c55e;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -14,11 +29,15 @@
       font-family: Inter, Arial, sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      background: #050816;
-      color: #ffffff;
-      line-height: 1.6;
+      background: var(--bg);
+      color: var(--text);
       overflow-x: hidden;
+      line-height: 1.6;
     }
 
     a {
@@ -27,181 +46,211 @@
     }
 
     .page {
-      width: 100%;
-      min-height: 100vh;
       background:
-        radial-gradient(circle at top left, rgba(0, 120, 255, 0.35), transparent 35%),
-        radial-gradient(circle at top right, rgba(0, 255, 255, 0.16), transparent 30%),
-        #050816;
+        radial-gradient(circle at 20% 5%, rgba(37,99,235,.45), transparent 34%),
+        radial-gradient(circle at 80% 10%, rgba(14,165,233,.28), transparent 28%),
+        radial-gradient(circle at 50% 50%, rgba(34,211,238,.08), transparent 40%),
+        #030712;
+      min-height: 100vh;
     }
 
     .container {
-      width: min(1150px, 92%);
+      width: min(1180px, 92%);
       margin: auto;
     }
 
-    .navbar {
+    .nav {
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 100;
+      background: rgba(3,7,18,.78);
       backdrop-filter: blur(18px);
-      background: rgba(5, 8, 22, 0.78);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid var(--line);
     }
 
     .nav-inner {
       height: 76px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
     }
 
-    .brand {
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      font-size: 22px;
+    .logo {
+      font-weight: 900;
+      letter-spacing: -.05em;
+      font-size: 24px;
     }
 
-    .brand span {
-      color: #38bdf8;
+    .logo span {
+      color: var(--cyan);
     }
 
-    .nav-btn {
-      background: linear-gradient(135deg, #2563eb, #06b6d4);
-      padding: 12px 20px;
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-cta,
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue2), var(--cyan));
+      padding: 14px 22px;
       border-radius: 999px;
-      font-weight: 700;
-      box-shadow: 0 0 30px rgba(37, 99, 235, 0.45);
+      font-weight: 900;
+      box-shadow: 0 0 38px rgba(37,99,235,.45);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .hero {
-      padding: 95px 0 80px;
+      padding: 90px 0 70px;
       text-align: center;
+      position: relative;
     }
 
     .badge {
       display: inline-flex;
-      padding: 9px 16px;
+      gap: 8px;
+      align-items: center;
+      padding: 10px 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.07);
       border-radius: 999px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
       color: #bae6fd;
       font-size: 14px;
-      margin-bottom: 26px;
+      margin-bottom: 24px;
     }
 
     h1 {
-      font-size: clamp(42px, 7vw, 82px);
-      line-height: 0.98;
-      letter-spacing: -0.07em;
-      max-width: 1000px;
+      max-width: 1050px;
       margin: auto;
+      font-size: clamp(46px, 8vw, 94px);
+      line-height: .92;
+      letter-spacing: -.075em;
+      text-transform: uppercase;
     }
 
-    h1 span {
+    .gradient-text {
       background: linear-gradient(135deg, #ffffff, #38bdf8, #2563eb);
       -webkit-background-clip: text;
       color: transparent;
     }
 
-    .hero p {
-      max-width: 760px;
+    .hero-sub {
+      max-width: 780px;
       margin: 28px auto 0;
-      color: #cbd5e1;
       font-size: 20px;
+      color: #cbd5e1;
     }
 
     .hero-actions {
       margin-top: 36px;
       display: flex;
-      gap: 15px;
       justify-content: center;
+      gap: 14px;
       flex-wrap: wrap;
     }
 
-    .btn-primary,
     .btn-secondary {
-      padding: 16px 28px;
-      border-radius: 14px;
-      font-weight: 800;
-      display: inline-block;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #2563eb, #06b6d4);
-      box-shadow: 0 0 40px rgba(37, 99, 235, 0.45);
-    }
-
-    .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.16);
-      background: rgba(255,255,255,0.06);
+      padding: 14px 22px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.07);
       color: #e2e8f0;
+      font-weight: 800;
     }
 
-    .event-card {
-      margin: 55px auto 0;
-      max-width: 900px;
+    .stats {
+      margin: 54px auto 0;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 14px;
+      max-width: 960px;
     }
 
-    .event-item {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 20px;
+    .stat {
+      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.04));
+      border: 1px solid var(--line);
+      border-radius: 22px;
       padding: 20px;
+      text-align: left;
     }
 
-    .event-item small {
+    .stat small {
+      color: var(--muted);
       display: block;
-      color: #94a3b8;
       margin-bottom: 5px;
     }
 
-    .event-item strong {
+    .stat strong {
       font-size: 18px;
     }
 
-    section {
-      padding: 80px 0;
+    .section {
+      padding: 82px 0;
     }
 
     .section-title {
       text-align: center;
-      max-width: 800px;
-      margin: 0 auto 45px;
+      max-width: 820px;
+      margin: 0 auto 44px;
     }
 
-    .section-title h2 {
-      font-size: clamp(32px, 5vw, 52px);
-      line-height: 1.05;
-      letter-spacing: -0.05em;
-      margin-bottom: 18px;
+    .eyebrow {
+      color: var(--cyan);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 5vw, 58px);
+      letter-spacing: -.055em;
+      line-height: 1.02;
+      margin-bottom: 16px;
     }
 
     .section-title p {
-      color: #cbd5e1;
+      color: var(--muted);
       font-size: 18px;
     }
 
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: 22px;
     }
 
     .card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.04));
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.035));
+      border: 1px solid var(--line);
+      border-radius: 28px;
       padding: 28px;
-      min-height: 230px;
+      position: relative;
+      overflow: hidden;
+      transition: .3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(34,211,238,.4);
+      box-shadow: 0 18px 70px rgba(37,99,235,.18);
     }
 
     .card h3 {
       font-size: 22px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
+      letter-spacing: -.025em;
     }
 
     .card p,
@@ -209,104 +258,319 @@
       color: #cbd5e1;
     }
 
-    .card ul {
-      padding-left: 20px;
+    .icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(37,99,235,.35), rgba(34,211,238,.16));
+      border: 1px solid rgba(34,211,238,.25);
+      display: grid;
+      place-items: center;
+      font-size: 23px;
+      margin-bottom: 18px;
     }
 
-    .highlight {
-      color: #38bdf8;
-    }
-
-    .pricing {
-      max-width: 760px;
+    .pain-list {
+      max-width: 920px;
       margin: auto;
-      text-align: center;
-      background:
-        linear-gradient(180deg, rgba(37,99,235,0.23), rgba(255,255,255,0.04));
-      border: 1px solid rgba(56,189,248,0.35);
-      border-radius: 32px;
-      padding: 44px;
-      box-shadow: 0 0 70px rgba(37,99,235,0.22);
+      display: grid;
+      gap: 14px;
     }
 
-    .old-price {
-      color: #94a3b8;
-      text-decoration: line-through;
-      font-size: 22px;
+    .pain-item {
+      padding: 22px 24px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.055);
+      border-radius: 20px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      font-size: 18px;
     }
 
-    .new-price {
-      font-size: clamp(48px, 8vw, 76px);
+    .pain-item span {
+      color: #f87171;
       font-weight: 900;
-      letter-spacing: -0.07em;
-      margin: 8px 0;
-      color: #ffffff;
     }
 
-    .bonus {
-      margin-top: 22px;
-      color: #bae6fd;
-    }
-
-    .faq {
-      max-width: 850px;
+    .workflow {
+      max-width: 1050px;
       margin: auto;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+      align-items: stretch;
     }
 
-    .faq-item {
-      border-bottom: 1px solid rgba(255,255,255,0.12);
-      padding: 22px 0;
+    .node {
+      padding: 20px 14px;
+      text-align: center;
+      border: 1px solid rgba(34,211,238,.22);
+      background: rgba(14,165,233,.07);
+      border-radius: 22px;
+      min-height: 150px;
     }
 
-    .faq-item h3 {
+    .node .emoji {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .node strong {
+      display: block;
+      line-height: 1.2;
       margin-bottom: 8px;
     }
 
-    .faq-item p {
+    .node small {
+      color: var(--muted);
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .day {
+      border-radius: 30px;
+      padding: 32px;
+      border: 1px solid rgba(34,211,238,.22);
+      background:
+        radial-gradient(circle at top right, rgba(37,99,235,.25), transparent 35%),
+        rgba(255,255,255,.055);
+    }
+
+    .day-tag {
+      display: inline-block;
+      margin-bottom: 15px;
+      color: var(--cyan);
+      font-weight: 900;
+      letter-spacing: .12em;
+      font-size: 12px;
+    }
+
+    .day ul {
+      margin-top: 16px;
+      padding-left: 18px;
       color: #cbd5e1;
     }
 
-    .footer {
-      padding: 45px 0;
+    .speaker {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .speaker-photo {
+      height: 160px;
+      border-radius: 24px;
+      background:
+        linear-gradient(135deg, rgba(37,99,235,.28), rgba(34,211,238,.1)),
+        rgba(255,255,255,.06);
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      font-size: 54px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 8px;
+      color: #bae6fd;
+      font-weight: 800;
+    }
+
+    .bonus-card {
+      border-left: 4px solid var(--cyan);
+    }
+
+    .price-box {
+      max-width: 880px;
+      margin: auto;
+      border-radius: 34px;
+      padding: 44px;
       text-align: center;
-      color: #94a3b8;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(34,211,238,.32);
+      background:
+        radial-gradient(circle at top, rgba(37,99,235,.35), transparent 34%),
+        linear-gradient(180deg, rgba(255,255,255,.1), rgba(255,255,255,.04));
+      box-shadow: 0 0 90px rgba(37,99,235,.25);
+    }
+
+    .old-price {
+      font-size: 24px;
+      color: var(--muted);
+      text-decoration: line-through;
+    }
+
+    .new-price {
+      font-size: clamp(56px, 9vw, 92px);
+      font-weight: 1000;
+      letter-spacing: -.08em;
+      line-height: 1;
+      margin: 10px 0;
+      color: #fff;
+    }
+
+    .save {
+      color: var(--gold);
+      font-weight: 900;
+      margin-bottom: 26px;
+    }
+
+    .countdown {
+      margin: 28px auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      max-width: 620px;
+    }
+
+    .count-item {
+      background: rgba(0,0,0,.22);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px;
+    }
+
+    .count-item strong {
+      font-size: 30px;
+      display: block;
+    }
+
+    .count-item small {
+      color: var(--muted);
+    }
+
+    .faq {
+      max-width: 860px;
+      margin: auto;
+      display: grid;
+      gap: 14px;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px 22px;
+      background: rgba(255,255,255,.055);
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    details p {
+      margin-top: 10px;
+      color: var(--muted);
+    }
+
+    .final {
+      text-align: center;
+      padding: 90px 0;
+    }
+
+    .final h2 {
+      max-width: 820px;
+      margin: auto auto 18px;
+    }
+
+    .final p {
+      max-width: 680px;
+      margin: 0 auto 28px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 34px 0;
+      color: var(--muted);
+      text-align: center;
     }
 
     .whatsapp {
       position: fixed;
       right: 22px;
       bottom: 22px;
-      background: #22c55e;
-      color: white;
+      z-index: 120;
+      background: var(--green);
+      color: #fff;
       padding: 16px 22px;
       border-radius: 999px;
-      font-weight: 900;
-      box-shadow: 0 12px 35px rgba(34,197,94,0.35);
-      z-index: 99;
+      font-weight: 1000;
+      box-shadow: 0 14px 42px rgba(34,197,94,.35);
     }
 
-    @media (max-width: 850px) {
-      .event-card,
-      .grid-3 {
+    .sticky-bottom {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .stats,
+      .grid-3,
+      .grid-2,
+      .timeline,
+      .workflow {
+        grid-template-columns: 1fr;
+      }
+
+      .speaker {
         grid-template-columns: 1fr;
       }
 
       .hero {
-        padding-top: 70px;
+        padding-top: 64px;
       }
 
-      .nav-inner {
-        height: 68px;
-      }
-
-      .nav-btn {
-        padding: 10px 14px;
-        font-size: 14px;
-      }
-
-      .pricing {
+      .price-box {
         padding: 30px 22px;
+      }
+
+      .countdown {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .whatsapp {
+        display: none;
+      }
+
+      .sticky-bottom {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 130;
+        background: rgba(3,7,18,.88);
+        backdrop-filter: blur(14px);
+        border-top: 1px solid var(--line);
+        padding: 12px;
+        gap: 10px;
+      }
+
+      .sticky-bottom a {
+        flex: 1;
+        text-align: center;
+        padding: 13px 10px;
+        border-radius: 14px;
+        font-weight: 900;
+      }
+
+      .sticky-bottom .wa {
+        background: var(--green);
+      }
+
+      .sticky-bottom .seat {
+        background: linear-gradient(135deg, var(--blue2), var(--cyan));
       }
     }
   </style>
@@ -315,230 +579,431 @@
 <body>
   <div class="page">
 
-    <nav class="navbar">
+    <nav class="nav">
       <div class="container nav-inner">
-        <div class="brand">MATA<span> AI</span></div>
-        <a class="nav-btn" href="https://wa.me/60123456789" target="_blank">Reserve Seat</a>
+        <div class="logo">MATA<span> AI</span></div>
+
+        <div class="nav-links">
+          <a href="#workforce">AI Workforce</a>
+          <a href="#modules">Modules</a>
+          <a href="#speakers">Speakers</a>
+          <a href="#pricing">Pricing</a>
+        </div>
+
+        <a class="nav-cta" href="https://wa.me/60123456789" target="_blank">
+          Reserve Seat →
+        </a>
       </div>
     </nav>
 
     <header class="hero">
       <div class="container">
-        <div class="badge">🇺🇸 Khusus untuk US Stock Market Trader</div>
+        <div class="badge">🇺🇸 AI Automation Workshop 2026 · US Stock Market Focus</div>
 
         <h1>
-          Build Your Own <span>AI Trading Workforce</span>
+          Trade Smarter.<br />
+          <span class="gradient-text">Not Harder.</span>
         </h1>
 
-        <p>
-          Belajar bina sistem AI yang membantu anda buat market research, stock screening,
-          news analysis, strategy development dan backtesting untuk US Stock Market.
+        <p class="hero-sub">
+          Belajar membina <b>AI Trading Workforce</b> yang membantu anda buat market research,
+          stock screening, news analysis, strategy development dan backtesting untuk US Stock Market.
         </p>
 
         <div class="hero-actions">
-          <a class="btn-primary" href="https://wa.me/60123456789" target="_blank">Reserve My Seat</a>
-          <a class="btn-secondary" href="#modules">Lihat Modul Kelas</a>
+          <a class="btn-primary" href="https://wa.me/60123456789" target="_blank">Reserve My Seat →</a>
+          <a class="btn-secondary" href="#modules">Lihat Apa Yang Anda Belajar</a>
         </div>
 
-        <div class="event-card">
-          <div class="event-item">
+        <div class="stats">
+          <div class="stat">
             <small>Tarikh</small>
-            <strong>25 & 26 July 2026</strong>
+            <strong>25–26 July 2026</strong>
           </div>
-          <div class="event-item">
-            <small>Masa</small>
-            <strong>8.00AM - 6.00PM</strong>
-          </div>
-          <div class="event-item">
-            <small>Tempat</small>
+          <div class="stat">
+            <small>Venue</small>
             <strong>Common Ground Ampang</strong>
           </div>
-          <div class="event-item">
+          <div class="stat">
+            <small>Format</small>
+            <strong>Physical Workshop</strong>
+          </div>
+          <div class="stat">
             <small>Seat</small>
-            <strong>20 Peserta Sahaja</strong>
+            <strong>Limited 20 Pax</strong>
           </div>
         </div>
       </div>
     </header>
 
-    <section>
+    <section class="section">
       <div class="container">
         <div class="section-title">
-          <h2>Masalah trader hari ini bukan kekurangan data.</h2>
-          <p>Masalah sebenar ialah terlalu banyak data, terlalu sedikit masa, dan terlalu banyak keputusan perlu dibuat dengan cepat.</p>
+          <div class="eyebrow">The Problem</div>
+          <h2>Market bukan makin perlahan. Trader yang masih manual akan makin tertinggal.</h2>
+          <p>US Market bergerak laju. Data terlalu banyak. News terlalu cepat. Anda tak boleh lagi bergantung kepada cara lama sepenuhnya.</p>
         </div>
 
-        <div class="grid-3">
-          <div class="card">
-            <h3>Research Makan Masa</h3>
-            <p>Nak baca news, laporan, chart, fundamental dan sentiment semua sekali memang penat.</p>
-          </div>
+        <div class="pain-list">
+          <div class="pain-item"><span>✕</span> Masih buka terlalu banyak tab semata-mata untuk buat research satu saham?</div>
+          <div class="pain-item"><span>✕</span> Masih screening stock secara manual dan makan masa berjam-jam?</div>
+          <div class="pain-item"><span>✕</span> Masih baca news, earnings, catalyst dan sentiment satu-satu?</div>
+          <div class="pain-item"><span>✕</span> Masih ada strategy idea, tapi susah nak test dan susun jadi system?</div>
+        </div>
+      </div>
+    </section>
 
-          <div class="card">
-            <h3>Market Bergerak Cepat</h3>
-            <p>US Market bergerak laju. Kadang-kadang peluang muncul sebelum kita sempat analyze.</p>
-          </div>
+    <section class="section" id="workforce">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">The New Workflow</div>
+          <h2>Anda bukan perlukan lebih banyak indicator. Anda perlukan AI Workforce.</h2>
+          <p>Bayangkan anda ada beberapa AI assistant yang membantu proses trading dari research sampai strategy testing.</p>
+        </div>
 
-          <div class="card">
-            <h3>Trade Masih Manual</h3>
-            <p>Ramai trader masih guna workflow lama sedangkan institution sudah guna AI dan automation.</p>
+        <div class="workflow">
+          <div class="node">
+            <div class="emoji">👤</div>
+            <strong>You</strong>
+            <small>Decision Maker</small>
+          </div>
+          <div class="node">
+            <div class="emoji">🔎</div>
+            <strong>Research Agent</strong>
+            <small>Company & Market</small>
+          </div>
+          <div class="node">
+            <div class="emoji">📰</div>
+            <strong>News Analyst</strong>
+            <small>Catalyst & Sentiment</small>
+          </div>
+          <div class="node">
+            <div class="emoji">📊</div>
+            <strong>Stock Screener</strong>
+            <small>Filter & Watchlist</small>
+          </div>
+          <div class="node">
+            <div class="emoji">⚙️</div>
+            <strong>Strategy Builder</strong>
+            <small>Idea to System</small>
+          </div>
+          <div class="node">
+            <div class="emoji">🧪</div>
+            <strong>Backtester</strong>
+            <small>Testing Logic</small>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="modules">
+    <section class="section" id="modules">
       <div class="container">
         <div class="section-title">
-          <h2>Apa yang anda akan belajar bina?</h2>
-          <p>Ini bukan kelas teori AI biasa. Ini kelas untuk setup workflow AI yang boleh digunakan dalam proses trading sebenar.</p>
+          <div class="eyebrow">What You Will Build</div>
+          <h2>Dalam workshop ini, anda akan develop sistem AI trading anda sendiri.</h2>
+          <p>Bukan sekadar dengar teori. Anda akan belajar setup workflow yang boleh digunakan untuk proses analysis sebenar.</p>
         </div>
 
         <div class="grid-3">
           <div class="card">
-            <h3>AI Research Agent</h3>
-            <ul>
-              <li>Market research</li>
-              <li>Stock summary</li>
-              <li>Company analysis</li>
-              <li>News interpretation</li>
-            </ul>
+            <div class="icon">🤖</div>
+            <h3>AI Research Assistant</h3>
+            <p>Membantu summarize company, sector, catalyst dan key information dengan lebih pantas.</p>
           </div>
 
           <div class="card">
-            <h3>AI Screening System</h3>
-            <ul>
-              <li>Stock filtering</li>
-              <li>Watchlist building</li>
-              <li>Sector comparison</li>
-              <li>Opportunity mapping</li>
-            </ul>
+            <div class="icon">🔍</div>
+            <h3>Research Automation</h3>
+            <p>Bina workflow untuk bantu kurangkan kerja research manual yang makan masa.</p>
           </div>
 
           <div class="card">
-            <h3>AI Strategy Workflow</h3>
+            <div class="icon">📈</div>
+            <h3>AI Trading Agent</h3>
+            <p>Gunakan AI untuk bantu generate trading idea, scenario dan structure strategy.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🛠️</div>
+            <h3>AI Tool Integration</h3>
+            <p>Gabungkan beberapa tool AI supaya workflow lebih kemas, cepat dan repeatable.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">⚙️</div>
+            <h3>Trading Automation Workflow</h3>
+            <p>Susun AI agent dalam satu sistem kerja yang membantu proses trading harian.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🛡️</div>
+            <h3>Risk Management System</h3>
+            <p>Gunakan AI untuk bantu structure risk, position sizing dan decision framework.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Who Is This For?</div>
+          <h2>Workshop ini dibina untuk market participant yang serius mahu upgrade workflow.</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="icon">📉</div>
+            <h3>Traders</h3>
+            <p>Swing trader, day trader atau position trader yang mahu analyze market dengan lebih tersusun.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">💼</div>
+            <h3>Investors</h3>
+            <p>Investor yang mahu buat stock research, news reading dan portfolio idea dengan lebih efisien.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🏦</div>
+            <h3>Fund Managers</h3>
+            <p>Untuk professional yang mahu explore AI workflow dalam investment research.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🧠</div>
+            <h3>Analysts</h3>
+            <p>Analyst yang mahu kurangkan repetitive work dan fokus kepada higher-level decision making.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🌙</div>
+            <h3>Busy Professionals</h3>
+            <p>Untuk yang bekerja siang, trade malam, dan perlukan system yang bantu jimat masa.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🚀</div>
+            <h3>AI Beginners</h3>
+            <p>Tak perlu jadi programmer. Yang penting mahu belajar dan ikut step-by-step.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">2-Day Workshop Flow</div>
+          <h2>Apa yang akan berlaku sepanjang 2 hari?</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="day">
+            <span class="day-tag">DAY 1 · FOUNDATION</span>
+            <h3>Build Your AI Research & Market Intelligence System</h3>
             <ul>
-              <li>Idea generation</li>
-              <li>Strategy development</li>
+              <li>Introduction to AI trading workflow</li>
+              <li>Prompt engineering untuk market research</li>
+              <li>AI research assistant setup</li>
+              <li>Stock analysis workflow</li>
+              <li>News and catalyst interpretation</li>
+            </ul>
+          </div>
+
+          <div class="day">
+            <span class="day-tag">DAY 2 · AUTOMATION</span>
+            <h3>Build Your AI Agentic Trading Workflow</h3>
+            <ul>
+              <li>AI agent framework</li>
+              <li>Strategy development workflow</li>
               <li>Backtesting logic</li>
-              <li>Automation workflow</li>
+              <li>Tool integration</li>
+              <li>Risk management and execution framework</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="section" id="speakers">
       <div class="container">
         <div class="section-title">
-          <h2>Untuk siapa seminar ini?</h2>
-          <p>Program ini sesuai untuk trader yang serius mahu upgrade cara mereka analyze dan execute idea dalam US Market.</p>
+          <div class="eyebrow">Learn From Practitioners</div>
+          <h2>Dibimbing oleh industry practitioners.</h2>
         </div>
 
-        <div class="grid-3">
-          <div class="card">
-            <h3>US Stock Trader</h3>
-            <p>Untuk anda yang trade atau invest dalam saham US seperti Nvidia, Tesla, Microsoft, Apple dan lain-lain.</p>
+        <div class="grid-2">
+          <div class="card speaker">
+            <div class="speaker-photo">👨‍💼</div>
+            <div>
+              <h3>Dr. Yussra Yusoff</h3>
+              <p class="tag">Deputy Chairman MATA</p>
+              <p>Certified technical analysis practitioner, CFTe, dan berpengalaman dalam market education serta professional training.</p>
+            </div>
           </div>
 
-          <div class="card">
-            <h3>Busy Professional</h3>
-            <p>Untuk yang bekerja siang, tetapi masih mahu analyze market dengan lebih tersusun pada waktu malam.</p>
-          </div>
-
-          <div class="card">
-            <h3>AI Beginner</h3>
-            <p>Tiada coding experience pun boleh join. Yang penting anda mahu belajar dan ikut step-by-step.</p>
+          <div class="card speaker">
+            <div class="speaker-photo">👨‍💼</div>
+            <div>
+              <h3>En. Awadz Hasmizan</h3>
+              <p class="tag">Quantitative Strategist</p>
+              <p>Investment Manager, Al-Khairi Berhad. 10+ years experience dalam market, strategy dan quantitative approach.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="section">
       <div class="container">
         <div class="section-title">
-          <h2>Speaker</h2>
-          <p>Dibimbing oleh practitioner yang memahami trading, market structure dan penggunaan AI dalam workflow moden.</p>
+          <div class="eyebrow">Included With Registration</div>
+          <h2>Bonus yang anda akan dapat.</h2>
         </div>
 
         <div class="grid-3">
-          <div class="card">
-            <h3>En. Awadz Hasmizan</h3>
-            <p class="highlight">Quantitative Strategist</p>
-            <p>Investment Manager, Al-Khairi Berhad. Pengalaman 10 tahun dalam market, strategy dan quantitative approach.</p>
+          <div class="card bonus-card">
+            <h3>Free Repeat Class</h3>
+            <p>Boleh ulang kelas untuk refresh semula apa yang telah dipelajari.</p>
           </div>
 
-          <div class="card">
-            <h3>Dr. Yussra Yusoff</h3>
-            <p class="highlight">MSTA, CFTe</p>
-            <p>Deputy Chairman MATA. Berpengalaman dalam technical analysis, market education dan professional training.</p>
+          <div class="card bonus-card">
+            <h3>Complimentary TA GPT</h3>
+            <p>Akses tool AI untuk bantu proses technical analysis dan workflow.</p>
           </div>
 
-          <div class="card">
-            <h3>MATA</h3>
-            <p class="highlight">Market Technical Analyst Association</p>
-            <p>Program fizikal khas untuk trader yang mahu bina AI Trading Workforce sendiri.</p>
+          <div class="card bonus-card">
+            <h3>Templates & Frameworks</h3>
+            <p>Prompt, workflow dan structure yang boleh digunakan semula selepas kelas.</p>
+          </div>
+
+          <div class="card bonus-card">
+            <h3>Certificate by MATA</h3>
+            <p>Sijil penyertaan rasmi daripada Malaysian Association of Technical Analysts.</p>
+          </div>
+
+          <div class="card bonus-card">
+            <h3>Physical Workshop</h3>
+            <p>Belajar secara hands-on di lokasi bersama trainers dan peserta lain.</p>
+          </div>
+
+          <div class="card bonus-card">
+            <h3>Early Bird Coaching</h3>
+            <p>First 5 early full payment akan dapat complimentary 2-hour one-to-one online coaching.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="section" id="pricing">
       <div class="container">
-        <div class="pricing">
-          <p class="old-price">Harga Asal RM5,000</p>
+        <div class="price-box">
+          <div class="eyebrow">Early Bird Promotion</div>
+          <p class="old-price">Normal Price RM5,000</p>
           <div class="new-price">RM2,000</div>
-          <p>Harga promosi untuk peserta terawal.</p>
+          <p class="save">Save RM3,000 · Limited Time Offer</p>
 
-          <p class="bonus">
-            Bonus: Complimentary TA GPT + Certificate by MATA + Free Repeat Class
-          </p>
+          <div class="countdown" id="countdown">
+            <div class="count-item"><strong id="days">00</strong><small>Days</small></div>
+            <div class="count-item"><strong id="hours">00</strong><small>Hours</small></div>
+            <div class="count-item"><strong id="minutes">00</strong><small>Minutes</small></div>
+            <div class="count-item"><strong id="seconds">00</strong><small>Seconds</small></div>
+          </div>
 
-          <br />
-
-          <a class="btn-primary" href="https://wa.me/60123456789" target="_blank">Reserve My Seat Now</a>
+          <a class="btn-primary" href="https://wa.me/60123456789" target="_blank">Reserve My Seat Now →</a>
+          <p style="margin-top:16px;color:#a8b3c7;">Secure your spot now. Seat sangat limited.</p>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="section">
       <div class="container">
         <div class="section-title">
-          <h2>FAQ</h2>
+          <div class="eyebrow">FAQ</div>
+          <h2>Soalan biasa sebelum join.</h2>
         </div>
 
         <div class="faq">
-          <div class="faq-item">
-            <h3>Perlu ada pengalaman coding?</h3>
-            <p>Tidak wajib. Seminar ini akan dibimbing step-by-step.</p>
-          </div>
+          <details>
+            <summary>Perlu ada pengalaman coding?</summary>
+            <p>Tidak wajib. Workshop ini akan dibimbing step-by-step. Anda hanya perlu bawa laptop dan ikut latihan.</p>
+          </details>
 
-          <div class="faq-item">
-            <h3>Seminar ini fokus market apa?</h3>
+          <details>
+            <summary>Adakah ini kelas signal?</summary>
+            <p>Bukan. Ini adalah kelas membina AI workflow dan sistem bantuan untuk research, screening, strategy dan analysis.</p>
+          </details>
+
+          <details>
+            <summary>Workshop ini fokus market apa?</summary>
             <p>Fokus utama adalah US Stock Market.</p>
-          </div>
+          </details>
 
-          <div class="faq-item">
-            <h3>Adakah ini kelas signal?</h3>
-            <p>Bukan. Ini kelas membina sistem dan workflow AI untuk membantu proses trading dan analysis.</p>
-          </div>
+          <details>
+            <summary>Adakah kelas ini sesuai untuk beginner?</summary>
+            <p>Ya, asalkan anda faham asas trading/investing dan berminat untuk belajar guna AI dalam workflow market.</p>
+          </details>
 
-          <div class="faq-item">
-            <h3>Berapa seat disediakan?</h3>
-            <p>Hanya 20 seat sahaja untuk memastikan peserta boleh ikut secara hands-on.</p>
-          </div>
+          <details>
+            <summary>Berapa ramai peserta sahaja?</summary>
+            <p>Limited kepada 20 participants supaya workshop lebih hands-on dan mudah untuk trainer bantu peserta.</p>
+          </details>
         </div>
       </div>
     </section>
 
-    <footer class="footer">
+    <section class="final">
       <div class="container">
-        © 2026 MATA AI Trading Automation System. All rights reserved.
+        <h2>AI tidak akan menggantikan trader yang tahu berfikir. Tapi trader yang tahu guna AI akan bergerak jauh lebih pantas.</h2>
+        <p>Join AI Trading Automation Workshop 2026 dan bina AI Trading Workforce anda sendiri.</p>
+        <a class="btn-primary" href="https://wa.me/601161631896" target="_blank">Reserve My Seat →</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        Powered by MATA · AI Trading Automation Workshop 2026
       </div>
     </footer>
 
-    <a class="whatsapp" href="https://wa.me/60123456789" target="_blank">WhatsApp</a>
+    <a class="whatsapp" href="https://wa.me/601161631896" target="_blank">WhatsApp</a>
+
+    <div class="sticky-bottom">
+      <a class="wa" href="https://wa.me/601161631896" target="_blank">WhatsApp</a>
+      <a class="seat" href="https://wa.me/601161631896" target="_blank">Reserve Seat</a>
+    </div>
 
   </div>
+
+  <script>
+    const eventDate = new Date("July 25, 2026 08:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      if (distance <= 0) {
+        document.getElementById("days").innerText = "00";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        document.getElementById("seconds").innerText = "00";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      document.getElementById("days").innerText = String(days).padStart(2, "0");
+      document.getElementById("hours").innerText = String(hours).padStart(2, "0");
+      document.getElementById("minutes").innerText = String(minutes).padStart(2, "0");
+      document.getElementById("seconds").innerText = String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
 </body>
 </html>
