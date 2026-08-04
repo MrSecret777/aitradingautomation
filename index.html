@@ -1243,6 +1243,89 @@
     .speaker h3 { font-size: 25px; }
     .tag { margin: 3px 0 13px; color: var(--cyan); font: 750 10px/1.3 ui-monospace, monospace; letter-spacing: .1em; text-transform: uppercase; }
 
+    .testimonial-stage {
+      max-width: 1120px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr);
+      gap: 56px;
+      align-items: center;
+    }
+
+    .testimonial-videos {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .testimonial-video {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      overflow: hidden;
+      border: 1px solid rgba(103,232,249,.26);
+      border-radius: 28px;
+      background: #02050c;
+      box-shadow: 0 32px 80px rgba(0,0,0,.4), 0 0 60px rgba(79,108,255,.14), inset 0 1px rgba(255,255,255,.08);
+    }
+
+    .testimonial-video::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      z-index: 2;
+      padding: 7px 9px;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 8px;
+      background: rgba(2,5,12,.74);
+      color: #d9fbff;
+      font: 700 7px/1 ui-monospace, monospace;
+      letter-spacing: .12em;
+      pointer-events: none;
+    }
+
+    .testimonial-video iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: 0;
+    }
+
+    .testimonial-copy { position: relative; }
+    .testimonial-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 19px;
+      color: var(--green);
+      font: 750 9px/1 ui-monospace, monospace;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .testimonial-label::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; box-shadow: 0 0 10px currentColor; }
+    .testimonial-copy h3 { max-width: 580px; margin-bottom: 18px; font-size: clamp(32px, 4vw, 50px); line-height: 1.06; letter-spacing: -.05em; }
+    .testimonial-copy p { max-width: 560px; color: #93a5be; font-size: 17px; line-height: 1.75; }
+
+    .youtube-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 27px; }
+
+    .youtube-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 0;
+      padding: 12px 15px;
+      border: 1px solid rgba(103,232,249,.2);
+      border-radius: 11px;
+      background: rgba(103,232,249,.06);
+      color: var(--cyan-soft);
+      font: 750 10px/1 ui-monospace, monospace;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+    .youtube-link:hover { transform: translateY(-2px); border-color: rgba(103,232,249,.38); background: rgba(103,232,249,.1); }
+
     .bonus-card { border-left: 1px solid rgba(148,163,184,.15); padding-top: 70px; }
     .bonus-card::after { content: "+"; position: absolute; top: 25px; left: 28px; color: var(--green); font: 300 28px/1 ui-monospace, monospace; }
 
@@ -1339,6 +1422,11 @@
       .workflow::before { display: none; }
       .pain-list { grid-template-columns: 1fr; }
       .speaker { grid-template-columns: 210px 1fr; }
+      .testimonial-stage { grid-template-columns: 1fr; gap: 42px; }
+      .testimonial-videos { width: min(100%, 680px); margin: auto; }
+      .testimonial-copy { text-align: center; }
+      .testimonial-copy h3, .testimonial-copy p { margin-left: auto; margin-right: auto; }
+      .youtube-actions { justify-content: center; }
       .sticky-bottom { border-top-color: rgba(148,163,184,.15); background: rgba(5,7,20,.9); }
       .sticky-bottom a { border-radius: 12px; font-size: 13px; }
       .sticky-bottom .wa { background: #16a66a; }
@@ -1368,6 +1456,8 @@
       .node { min-height: 150px; }
       .speaker { grid-template-columns: 1fr; }
       .speaker-photo { height: 360px; }
+      .testimonial-videos { width: min(100%, 340px); grid-template-columns: 1fr; }
+      .testimonial-video { width: 100%; }
       .price-box { padding: 54px 20px 38px; }
       .countdown { grid-template-columns: repeat(2, 1fr); }
       .day { min-height: 0; padding: 30px 25px; }
@@ -1426,6 +1516,7 @@
           <a href="#modules">Modules</a>
           <a href="#schedule">2-Day Course</a>
           <a href="#speakers">Speakers</a>
+          <a href="#testimonials">Testimonials</a>
           <a href="#pricing">Pricing</a>
         </div>
 
@@ -1744,6 +1835,62 @@
       </div>
     </section>
 
+    <section class="section testimonial-section" id="testimonials">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Video Testimonial</div>
+          <h2>Dengar sendiri pengalaman peserta.</h2>
+          <p>Dua perkongsian ringkas daripada mereka yang pernah melalui pengalaman pembelajaran bersama MATA.</p>
+        </div>
+
+        <div class="testimonial-stage">
+          <div class="testimonial-videos">
+            <div class="testimonial-video" data-label="TESTIMONIAL 01 · YOUTUBE SHORT">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/gAOF0tLFdSQ?rel=0"
+                title="Video testimonial peserta MATA 1"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <div class="testimonial-video" data-label="TESTIMONIAL 02 · YOUTUBE SHORT">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/4Tj45KHh-SY?rel=0"
+                title="Video testimonial peserta MATA 2"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+
+          <div class="testimonial-copy">
+            <div class="testimonial-label">Student Experience</div>
+            <h3>Pengalaman sebenar memberi gambaran yang lebih jelas.</h3>
+            <p>Tonton dua video ringkas ini untuk melihat sendiri perkongsian peserta tentang pengalaman belajar bersama MATA.</p>
+            <div class="youtube-actions">
+              <a class="youtube-link"
+                 href="https://youtube.com/shorts/gAOF0tLFdSQ?feature=share"
+                 target="_blank"
+                 rel="noopener">
+                Video 01 ↗
+              </a>
+              <a class="youtube-link"
+                 href="https://youtube.com/shorts/4Tj45KHh-SY?feature=share"
+                 target="_blank"
+                 rel="noopener">
+                Video 02 ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="container">
         <div class="section-title">
@@ -1905,7 +2052,7 @@
     setInterval(updateCountdown, 1000);
 
     const revealItems = document.querySelectorAll(
-      ".section-title, .pain-item, .node, .card, .day, .price-box"
+      ".section-title, .pain-item, .node, .card, .day, .price-box, .testimonial-stage"
     );
 
     if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
