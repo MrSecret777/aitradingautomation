@@ -1328,6 +1328,9 @@
 
     .bonus-card { border-left: 1px solid rgba(148,163,184,.15); padding-top: 70px; }
     .bonus-card::after { content: "+"; position: absolute; top: 25px; left: 28px; color: var(--green); font: 300 28px/1 ui-monospace, monospace; }
+    .bonus-grid { grid-template-columns: repeat(6, 1fr); }
+    .bonus-grid .bonus-card { grid-column: span 2; }
+    .bonus-grid .bonus-card:nth-last-child(2) { grid-column: 2 / span 2; }
 
     .price-box {
       position: relative;
@@ -1418,6 +1421,9 @@
       .stat:nth-child(-n+2) { border-bottom: 1px solid rgba(148,163,184,.13); }
       .section { padding: 82px 0; }
       .grid-3, .grid-2, .timeline { grid-template-columns: 1fr; }
+      .bonus-grid { grid-template-columns: 1fr; }
+      .bonus-grid .bonus-card,
+      .bonus-grid .bonus-card:nth-last-child(2) { grid-column: auto; }
       .workflow { grid-template-columns: repeat(2, 1fr); }
       .workflow::before { display: none; }
       .pain-list { grid-template-columns: 1fr; }
@@ -1898,7 +1904,7 @@
           <h2>Bonus yang anda akan dapat.</h2>
         </div>
 
-        <div class="grid-3">
+        <div class="grid-3 bonus-grid">
           <div class="card bonus-card">
             <h3>Free Repeat Class</h3>
             <p>Boleh ulang kelas untuk refresh semula apa yang telah dipelajari.</p>
@@ -1924,10 +1930,6 @@
             <p>Belajar secara hands-on di lokasi bersama trainers dan peserta lain.</p>
           </div>
 
-          <div class="card bonus-card">
-            <h3>Early Bird Coaching</h3>
-            <p>First 5 early full payment akan dapat complimentary 2-hour one-to-one online coaching.</p>
-          </div>
         </div>
       </div>
     </section>
