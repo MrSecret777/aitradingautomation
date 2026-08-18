@@ -7,6 +7,21 @@
   <title>AI Trading Automation Workshop 2026 | MATA</title>
   <meta name="description" content="Build Your Own AI Trading Workforce. Seminar fizikal 12 &amp; 13 Sept 2026 di Premiera Hotel Kuala Lumpur. Limited to 20 participants." />
 
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2509943782841670');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+
   <style>
     :root {
       --bg: #030712;
@@ -1494,6 +1509,17 @@
 </head>
 
 <body>
+  <!-- Meta Pixel fallback for visitors with JavaScript disabled -->
+  <noscript>
+    <img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=2509943782841670&amp;ev=PageView&amp;noscript=1"
+      alt=""
+    />
+  </noscript>
+
   <div class="page">
 
     <div class="signal-strip" aria-hidden="true">
@@ -2108,6 +2134,31 @@
         if (target) navObserver.observe(target);
       });
     }
+
+    const trackMetaEvent = (eventName, parameters = {}) => {
+      if (typeof window.fbq === "function") {
+        window.fbq("track", eventName, parameters);
+      }
+    };
+
+    document.querySelectorAll('a[href*="onpay.my"]').forEach((link) => {
+      link.addEventListener("click", () => {
+        trackMetaEvent("InitiateCheckout", {
+          content_name: "AI Trading Automation Workshop 2026",
+          content_category: "Physical Workshop",
+          value: 2000,
+          currency: "MYR"
+        });
+      });
+    });
+
+    document.querySelectorAll('a[href*="wa.me"]').forEach((link) => {
+      link.addEventListener("click", () => {
+        trackMetaEvent("Contact", {
+          content_name: "AI Trading Automation Workshop 2026"
+        });
+      });
+    });
   </script>
 </body>
 </html>
